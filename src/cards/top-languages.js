@@ -110,7 +110,7 @@ const getCircleLength = (radius) => {
  * @returns {number} Card height.
  */
 const calculateCompactLayoutHeight = (totalLangs) => {
-  return COMPACT_LAYOUT_BASE_HEIGHT + Math.round(totalLangs / 2) * 25;
+  return 195; // Nilai statis agar sama dengan kartu Stats utama
 };
 
 /**
@@ -279,7 +279,7 @@ const createLanguageTextNode = ({ langs, totalSize, hideProgress }) => {
     );
     return flexLayout({
       items,
-      gap: 25,
+      gap: 30, // Ditambah sedikit karena font membesar
       direction: "column",
     }).join("");
   });
@@ -843,7 +843,7 @@ const renderTopLanguages = (topLangs, options = {}) => {
     }
     .bold { font-weight: 700 }
     .lang-name {
-      font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
+      font: 400 13px "Segoe UI", Ubuntu, Sans-Serif; /* Naik ke 13px agar lebih jelas */
       fill: ${colors.textColor};
     }
     .stagger {
